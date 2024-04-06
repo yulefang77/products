@@ -1,12 +1,20 @@
-# read a file with name 'z-products.csv'
+import os # operating system
+
 products = []
-with open('z-products.csv', 'r', encoding='utf=8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue # skip this time, not break this loop
-		name, price = line.strip('\n').split(',')
-		products.append([name, price])
-print(products)
+
+# check if the file exists 
+if os.path.isfile('z-products.csv'):
+	print('yeah！找到檔案了！')
+	# read a file with name 'z-products.csv'
+	with open('z-products.csv', 'r', encoding='utf=8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue # skip this time, not break this loop
+			name, price = line.strip('\n').split(',')
+			products.append([name, price])
+	print(products)
+else:
+	print('找不到檔案…')
 
 # add product's name and price
 while True:
