@@ -29,7 +29,7 @@ def user_input(products):
 
 # write a file
 def write_file(filename, products):
-	with open(filename, 'w', encoding='utf=8') as f:
+	with open(filename, 'w', encoding='utf-8') as f:
 		f.write('商品,價格\n')
 		p = []
 		for p in products:
