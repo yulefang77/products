@@ -2,7 +2,7 @@ import os # operating system
 
 # check if the file exists
 def read_file(filename):
-	with open(filename, 'r', encoding='utf=8') as f:
+	with open(filename, 'r', encoding='utf-8') as f:
 		products = []	
 		for line in f:
 			if '商品,價格' in line:
